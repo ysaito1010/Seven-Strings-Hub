@@ -1,0 +1,417 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+img {
+  width: 100%;
+}
+
+/* 指定カラーパレットの定義 */
+:root {
+  --color-bg-main: #f8f9fa;
+  --color-bg-card: #ffffff;
+  --color-accent: #0066cc;
+  --color-accent-glow: #00b4d8;
+  --color-text-main: #1a1d24;
+  --color-text-sub: #6c757d;
+
+  /* ゴールド（中央のロゴ用） */
+  --color-gold: #c5a059;
+  --color-gold-glow: rgba(197, 160, 89, 0.6);
+}
+
+/* 全体設定 */
+body {
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+  font-family: "Noto Sans JP", "Segoe UI", sans-serif;
+  overflow-x: hidden;
+  padding-bottom: 100px; /* 固定プレイヤー用の余白 */
+}
+
+/* ナビゲーションバー */
+.ssh-navbar {
+  background-color: rgba(219, 241, 255, 0.967);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 173, 181, 0.2);
+}
+.ssh-navbar .navbar-brand {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  color: var(--color-text-main);
+  text-shadow: 0 0 8px var(--color-accent-glow);
+}
+
+.nav-rogo {
+  height: 60px;
+}
+
+.ssh-nav-link {
+  color: var(--color-text-sub) !important;
+  font-weight: 700;
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+.ssh-nav-link:hover,
+.ssh-nav-link.active {
+  color: var(--color-accent-glow) !important;
+  text-shadow: 0 0 10px var(--color-accent-glow);
+}
+
+/* ヒーローセクション（ロゴデザイン再現） */
+.ssh-hero-section {
+  position: relative;
+  padding: 100px 0 30px 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(135, 215, 252, 0.8) 0%,
+    var(--color-bg-main) 100%
+  );
+  overflow: hidden;
+}
+
+/* 背景の波形模様風の装飾 */
+.ssh-bg-guitar {
+  position: absolute;
+  font-size: 28rem;
+  color: var(--color-accent);
+  opacity: 0.03;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-12deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 7弦を模したライン装飾 */
+.ssh-strings-container {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+}
+.ssh-string-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-accent-glow) 50%,
+    transparent 100%
+  );
+}
+
+/* ロゴエリア */
+.ssh-logo-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.ssh-logo-left {
+  text-align: right;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+.ssh-logo-left .ssh-text-the,.ssh-text-tracks {
+  font-size: 3.5rem;
+  line-height: 0.85;
+  color: var(--color-text-main);
+  text-shadow: 0 0 12px rgba(8, 247, 254, 0.6);
+}
+
+.ssh-text-the{
+  text-align: left;
+}
+
+.ssh-text-studio{
+margin-top: 35px;
+}
+
+.ssh-logo-left .ssh-text-studio {
+  font-size: 3.2rem;
+  line-height: 0.85;
+  color: var(--color-text-main);
+  text-shadow: 0 0 12px rgba(8, 247, 254, 0.6);
+}
+.ssh-logo-center {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ゴールドのギア回転アニメーション */
+.ssh-gold-gear {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border: 4px dashed var(--color-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--color-gold-glow);
+  animation: sshSpinGear 40s linear infinite;
+}
+.ssh-gold-crest {
+  position: relative;
+  z-index: 2;
+  color: var(--color-gold);
+  font-size: 3.2rem;
+  filter: drop-shadow(0 0 10px var(--color-gold-glow));
+}
+.ssh-logo-right {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+.ssh-logo-right .ssh-text-studio {
+  font-size: 3.5rem;
+  color: var(--color-text-main);
+  text-shadow: 0 0 12px rgba(8, 247, 254, 0.6);
+}
+
+.record1 {
+  position: fixed;
+  left: -5%;
+  top: 10%;
+  width: 30%;
+  animation: rmahou1 10s linear infinite;
+  z-index: -100;
+  opacity: 0.3;
+}
+
+.record2 {
+  position: fixed;
+  right: -10%;
+  top: 50%;
+  width: 45%;
+  animation: rmahou1 15s linear infinite;
+  z-index: -100;
+  opacity: 0.3;
+}
+
+/* アニメーションの具体的な動き（ビデオテープ）を定義 */
+@keyframes rmahou1 {
+  0% {
+    /* アニメーション開始時（0秒目）のキメポーズ：回転なし */
+    transform: rotate(0deg);
+  }
+  100% {
+    /* アニメーション終了時（15秒目）のキメポーズ：時計回りに1周 */
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sshSpinGear {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* レスポンシブロゴ調整 */
+@media (max-width: 768px) {
+  .ssh-logo-wrapper {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .ssh-logo-left {
+    text-align: center;
+  }
+  .ssh-logo-left .ssh-text-seven,
+  .ssh-logo-left .ssh-text-strings {
+    font-size: 2.2rem;
+  }
+  .ssh-logo-right .ssh-text-hub {
+    font-size: 2.2rem;
+  }
+  .ssh-logo-center {
+    width: 100px;
+    height: 100px;
+  }
+  .ssh-gold-gear {
+    width: 85px;
+    height: 85px;
+  }
+  .ssh-gold-crest {
+    font-size: 2.5rem;
+  }
+
+}
+
+/* セクション共通 */
+.ssh-section-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+.ssh-section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 3px;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent-glow);
+}
+
+/* カード・アーカイブセクション */
+#archive{
+  position: relative;
+}
+
+.ssh-track-card {
+  background-color: var(--color-bg-card);
+  border: 1px solid rgba(238, 238, 238, 0.05);
+  border-radius: 12px;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.ssh-track-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 173, 181, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 173, 181, 0.15);
+}
+.ssh-track-title {
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+.ssh-track-desc {
+  color: var(--color-text-sub);
+}
+.ssh-custom-badge {
+  background-color: rgba(0, 173, 181, 0.1);
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent-glow);
+  font-size: 0.75rem;
+  padding: 0.35em 0.65em;
+}
+.ssh-track-meta {
+  color: var(--color-text-sub);
+  font-size: 0.8rem;
+}
+
+/* ボタンカスタマイズ */
+.ssh-btn-outline {
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent-glow);
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+.ssh-btn-outline:hover,
+.ssh-btn-outline.active {
+  background-color: var(--color-accent);
+  color: var(--color-text-main);
+  box-shadow: 0 0 12px var(--color-accent-glow);
+  border-color: var(--color-accent-glow);
+}
+
+/* グローバルオーディオプレイヤー（固定式） */
+.ssh-global-player {
+  /* 💡 どんな要素が暴れても、画面の最下部に強制固定する */
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  
+  /* 💡 レコード背景などのあらゆる装飾よりも手前に引っ張り出す */
+  z-index: 99999 !important; 
+  
+  /* 💡 スクロール時のちらつきや置いていかれを物理的に防止する魔法の2行 */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  /* あなたが設定したサイバーパンクなデザイン（そのままキープ） */
+  background-color: rgba(37, 42, 52, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 2px solid var(--color-accent);
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.5);
+  padding: 15px 0;
+
+  /* 💡 アニメーション用：初期状態は画面の下に完全に隠す */
+  transform: translateY(100%); 
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 💡 activeクラスがついたらニュッと最下部に出現 */
+.ssh-global-player.active {
+  transform: translateY(0) !important;
+}
+
+.ssh-player-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: var(--color-text-main);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 0 10px var(--color-accent-glow);
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+.ssh-player-btn:hover {
+  transform: scale(1.05);
+  background-color: var(--color-accent-glow);
+}
+.ssh-progress-container {
+  width: 100%;
+  height: 6px;
+  background-color: rgba(238, 238, 238, 0.1);
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+}
+.ssh-progress-inner {
+  height: 100%;
+  width: 0%;
+  background-color: var(--color-accent-glow);
+  box-shadow: 0 0 8px var(--color-accent-glow);
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* アバウトセクション */
+.ssh-about-box {
+  background-color: var(--color-bg-card);
+  border-radius: 12px;
+  padding: 35px;
+  border-left: 4px solid var(--color-accent);
+}
+.ssh-spec-list dt {
+  color: var(--color-accent-glow);
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+.ssh-spec-list dd {
+  color: var(--color-text-sub);
+  margin-bottom: 15px;
+}
