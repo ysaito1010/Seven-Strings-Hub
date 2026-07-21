@@ -5,13 +5,15 @@
 疾走感のあるアニロック・ハードロック音源に特化した、フリー音楽素材ライブラリWebアプリケーションです。
 楽曲再生を切らさずにサイト内を快適に回遊できる仕様を意識して制作しました。
 
-【URL】
-・GitHubリポジトリ： https://github.com/ysaito1010/Seven-Strings-Hub
-
 【使用技術・開発環境】
 ・フロントエンド：HTML5, CSS3 (Bootstrap 5), JavaScript (jQuery / ES6)
 ・バックエンド：PHP (get_tracks.php, upload.php)
 ・デザイン・その他：Git / GitHub, Responsive Design, SPA(PJAX)風非同期遷移
+
+【使用AI】
+・Gemini(コーディング)
+・Copilot(コーディング)
+・ChatGPT(画像生成)
 
 【こだわった点・工夫した技術】
 1. 快適な楽曲試聴体験（PJAXによるページ遷移）：
