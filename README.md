@@ -7,7 +7,6 @@
 
 【URL】
 ・GitHubリポジトリ： https://github.com/ysaito1010/Seven-Strings-Hub
-・公開サイトURL： [※レンダリングサーバー等に公開したURLがあれば記載]
 
 【使用技術・開発環境】
 ・フロントエンド：HTML5, CSS3 (Bootstrap 5), JavaScript (jQuery / ES6)
